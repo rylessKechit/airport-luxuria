@@ -92,7 +92,7 @@
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-royal-blue-900 to-sky-blue-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-royal-blue-900 to-air-france-red-600 bg-clip-text text-transparent;
   }
   
   .glass-effect {
