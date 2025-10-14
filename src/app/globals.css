@@ -2,6 +2,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Leaflet CSS */
+@import 'leaflet/dist/leaflet.css';
 
 @layer base {
   html {
@@ -110,8 +112,6 @@
   }
 }
 
-
-
 @layer base {
   * {
     @apply border-border;
@@ -119,4 +119,86 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Leaflet CSS */
+@import 'leaflet/dist/leaflet.css';
+
+/* Custom marker styles */
+.custom-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Popup customization */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.leaflet-popup-tip {
+  background: white;
+}
+
+/* Styles personnalisés pour la carte */
+.custom-airport-marker {
+  background: transparent !important;
+  border: none !important;
+  transition: transform 0.2s ease;
+}
+
+.custom-airport-marker:hover {
+  transform: scale(1.1);
+}
+
+.custom-popup .leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 0;
+}
+
+.custom-popup .leaflet-popup-content {
+  margin: 0;
+  padding: 0;
+}
+
+.custom-popup .leaflet-popup-tip {
+  background: white;
+}
+
+/* Fix pour éviter les conflits avec Tailwind */
+.leaflet-container {
+  font-family: inherit;
+}
+
+/* Popup moderne */
+.custom-popup-modern .leaflet-popup-content-wrapper {
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  padding: 12px;
+  border: none;
+}
+
+.custom-popup-modern .leaflet-popup-content {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+}
+
+.custom-popup-modern .leaflet-popup-tip {
+  background: white;
+  border: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.custom-popup-modern .leaflet-popup-close-button {
+  right: 16px;
+  top: 16px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+}
+
+.custom-popup-modern .leaflet-popup-close-button:hover {
+  color: white;
 }
