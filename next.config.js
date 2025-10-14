@@ -15,7 +15,22 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  // Headers for security and performance
+
+  generateEtags: false,
+  poweredByHeader: false,
+  
+  // Redirections SEO
+  async redirects() {
+    return [
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
+    ];
+  },
+
+  // Headers pour SEO
   async headers() {
     return [
       {
@@ -31,11 +46,15 @@ const nextConfig = {
           },
           {
             key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin',
+            value: 'origin-when-cross-origin',
+          },
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
           },
         ],
       },
-    ]
+    ];
   },
 }
 
